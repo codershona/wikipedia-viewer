@@ -1,26 +1,60 @@
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
 
-function App() {
-  return (
+import './index.css';
+
+class App extends React.Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+      wikiSearchTerms: ''
+    }
+
+  }
+
+
+  useWikiSearchEngine = () => {
+
+  }
+
+  changeWkikiSearchTerm = (e) => {
+    this.setState({
+      wikiSearchTerms: e.target.value
+    });
+
+
+  }
+   
+   render() {
+
+    let wikiSearchResults = [];
+
+     return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+    <h1>WIKIPEDIA VIEWER</h1>
+
+    <form action="">
+    <input type="text" value='' onChange={this.changeWkikiSearchTerm} placeholder='Search WIKIPEDIA Articles' />
+
+    <button type="submit" onClick={this.useWikiSearchEngine}>SEARCH</button>
+
+    {wikiSearchResults}
+
+
+
+    </form>
     </div>
   );
+
+
+
+   }
+
+
+ 
 }
 
 export default App;
