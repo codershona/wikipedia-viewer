@@ -9,13 +9,24 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+
+    wikiSearchReturnValues: [],
       wikiSearchTerms: ''
     }
 
   }
 
 
-  useWikiSearchEngine = () => {
+  useWikiSearchEngine = (e) => {
+
+    e.preventDefault();
+
+    this.setState({
+      wikiSearchReturnValues: []
+    });
+
+    const pointerToThis = this;
+    console.log(this);
 
   }
 
@@ -37,7 +48,7 @@ class App extends React.Component {
     <h1>WIKIPEDIA VIEWER</h1>
 
     <form action="">
-    <input type="text" value='' onChange={this.changeWkikiSearchTerm} placeholder='Search WIKIPEDIA Articles' />
+    <input type="text" value={this.state.WikiSearchTerms} onChange={this.changeWkikiSearchTerm} placeholder='Search WIKIPEDIA Articles' />
 
     <button type="submit" onClick={this.useWikiSearchEngine}>SEARCH</button>
 
