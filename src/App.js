@@ -156,27 +156,35 @@ var params = {
 
     let wikiSearchResults = [];
 
-    // console.log(this.state.wikiSearchReturnValues);
+    console.log(this.state.wikiSearchReturnValues);
 
-    
+    for (var key3 in this.state.wikiSearchReturnValues) {
+
+
+      wikiSearchResults.push(
+
+         <div className="searchResultDiv" key={key3}>
+          <h3><a href={this.state.wikiSearchReturnValues[key3].queryResultPageFullURL}>{this.state.wikiSearchReturnValues[key3].queryResultPageTitle}</a></h3>
+          <span className='link'><a href={this.state.wikiSearchReturnValues[key3].queryResultPageFullURL}>{this.state.wikiSearchReturnValues[key3].queryResultPageFullURL}</a></span>
+          <p className="description" dangerouslySetInnerHTML={{__html: this.state.wikiSearchReturnValues[key3].queryResultPageSnippet}}></p>
+        </div>
+
+
+      );
+
+
+
+    }
 
      return (
-    <div className="App">
-     
-    <h1>WIKIPEDIA VIEWER</h1>
-
-    <form action="">
-      <input type="text" value={this.state.WikiSearchTerms || ''} onChange={this.changeWikiSearchTerms} placeholder='Search Wikipedia Articles' />
+     <div className="App">
+        <h1>WIKIPEDIA VIEWER</h1>
+        <form action="">
+          <input type="text" value={this.state.WikiSearchTerms || ''} onChange={this.changeWikiSearchTerms} placeholder='Search Wikipedia Articles' />
           <button type='submit' onClick={this.useWikiSearchEngine}>Search</button>
-
-
-
-    </form>
-
-    {wikiSearchResults}
-
-
-    </div>
+        </form>
+        {wikiSearchResults}
+      </div>
   );
 
 
