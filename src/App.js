@@ -45,6 +45,41 @@ var params = {
 
       });
 
+    fetch(url)
+      .then(
+
+        function (response) {
+          
+          return response.json();
+      
+
+        }
+
+
+
+    ) 
+
+      .then(
+
+        function (response) {
+          console.log(response.query.search[0].pageid);
+
+
+          for (var key in response.query.search) {
+
+
+          }
+
+
+        }
+
+
+      )
+
+
+
+
+
 }
 
 
