@@ -1,11 +1,11 @@
-£ Build A Wikipedia Viewer
+# Build A Wikipedia Viewer
 
 
 #### Project Can be found in here :
  **[Live version](https://wikipedia-viewer-92c3d.web.app/)**
  
  
- * Notes:
+ # Notes:
  
  ```
             -  npx create-react-app wikipedia-viewer ;
