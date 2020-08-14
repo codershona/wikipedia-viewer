@@ -93,7 +93,7 @@ var params = {
         function (response) {
           for (var key2 in pointerToThis.state.wikiSearchReturnValues) {
     
-    console.log(pointerToThis.state.wikiSearchReturnValues);
+   // console.log(pointerToThis.state.wikiSearchReturnValues);
 
   
      let page = pointerToThis.state.wikiSearchReturnValues[key2];
@@ -116,7 +116,8 @@ var params = {
     .then(
 
       function (response) {
-        page.queryResultPageFullURL = response.query.pages[pageID].fullurl;
+    
+    page.queryResultPageFullURL = response.query.pages[pageID].fullurl;
 
       pointerToThis.forceUpdate();
 
@@ -155,21 +156,26 @@ var params = {
 
     let wikiSearchResults = [];
 
+    // console.log(this.state.wikiSearchReturnValues);
+
+    
+
      return (
     <div className="App">
      
     <h1>WIKIPEDIA VIEWER</h1>
 
     <form action="">
-    <input type="text" value={this.state.WikiSearchTerms} onChange={this.changeWkikiSearchTerm} placeholder='Search WIKIPEDIA Articles' />
-
-    <button type="submit" onClick={this.useWikiSearchEngine}>SEARCH</button>
-
-    {wikiSearchResults}
+      <input type="text" value={this.state.WikiSearchTerms || ''} onChange={this.changeWikiSearchTerms} placeholder='Search Wikipedia Articles' />
+          <button type='submit' onClick={this.useWikiSearchEngine}>Search</button>
 
 
 
     </form>
+
+    {wikiSearchResults}
+
+
     </div>
   );
 
